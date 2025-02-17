@@ -9,6 +9,8 @@ import styleTools from "../../stylesTool";
 const ContainerStyled = styled.div`
   width: 100%;
   box-sizing: border-box;
+  background-color: ${styleTools.color.colorBackground};
+  padding-bottom: 8rem;
 `;
 const GridStyled = styled.div`
   display: grid;
@@ -32,7 +34,7 @@ const Home = () => {
     <ContainerStyled>
       <BlockImg />
       <TitleUp content={"Мои последние работы"} />
-      <GridStyled>
+      <GridStyled className="Limiter">
         <Card img={imgCard} title={"Сервис изучения английского"} link={"Подробней"} />
         <Card img={imgCard} title={"Сервис изучения английского"} link={"Подробней"} />
         <Card img={imgCard} title={"Сервис изучения английского"} link={"Подробней"} />

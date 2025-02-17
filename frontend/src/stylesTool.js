@@ -13,7 +13,7 @@ const styleTools = {
     colorShadow: "0px 0px 6px 4px #e3e6ed",
   },
   size: { sm: "640px", md: "768px", lg: "1024px", xl: "1280px", xxl: "1536px" },
-  shadow: { shadowB: "box-shadow: 0px 9px 19px 6px rgba(0, 0, 0, 0.3);" },
+  shadow: { shadowB: "0px 5px 8px 0px #BBBBBBFF" },
 };
 
 export default styleTools;

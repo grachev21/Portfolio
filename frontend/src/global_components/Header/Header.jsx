@@ -8,13 +8,17 @@ import styleTools from "../../stylesTool";
 
 import SidePanel from "./SidePanel";
 
-const ContainerStyled = styled.div`
+const ContainerStyled = styled.div``;
+
+const HeaderStyled = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--colorPanel);
   height: 4rem;
   transition: all, 1s;
+  z-index: 50;
   @media (min-width: ${styleTools.size.md}) {
     height: 6rem;
     transition: all, 1s;
@@ -67,24 +71,26 @@ const Header = () => {
   return (
     <ContainerStyled>
       <SidePanel isMenu={isMenu} menu={menu} />
-      <Logo />
-      <MenuStyled>
-        <NavStyled>
-          {menu.map((value, index) => {
-            return <LinkLight key={index} link={value} />;
-          })}
-        </NavStyled>
-        <NavIconsStyled>
-          <FaGithub size={28} color="#ffffff" />
-          <FaVk size={28} color="#ffffff" />
-          <FaWhatsapp size={28} color="#ffffff" />
-          <FaTelegram size={28} color="#ffffff" />
-        </NavIconsStyled>
-      </MenuStyled>
+      <HeaderStyled>
+        <Logo />
+        <MenuStyled>
+          <NavStyled>
+            {menu.map((value, index) => {
+              return <LinkLight key={index} link={value} />;
+            })}
+          </NavStyled>
+          <NavIconsStyled>
+            <FaGithub size={28} color="#ffffff" />
+            <FaVk size={28} color="#ffffff" />
+            <FaWhatsapp size={28} color="#ffffff" />
+            <FaTelegram size={28} color="#ffffff" />
+          </NavIconsStyled>
+        </MenuStyled>
 
-      <LuckStyled>
-        <AiOutlineMenu onClick={runMenu} size={27} color="#ffffff" />
-      </LuckStyled>
+        <LuckStyled>
+          <AiOutlineMenu onClick={runMenu} size={27} color="#ffffff" />
+        </LuckStyled>
+      </HeaderStyled>
     </ContainerStyled>
   );
 };

@@ -1,13 +1,12 @@
-import styleTools from "../../../stylesTool";
 import coder from "../img/a20cd03f-cbb7-46e3-91cc-6f2de27e025f.jpg";
-// import s from "./styles.module.css";
 import styled from "styled-components";
+import styleTools from "../../../stylesTool";
 
 const ContainerStyled = styled.div`
   position: relative;
   width: 100%;
   height: 62vw;
-  box-shadow: var(--colorShadow);
+  box-shadow: ${styleTools.shadow.shadowB};
 `;
 const BlockTextStyled = styled.div`
   position: absolute;
@@ -35,14 +34,14 @@ const SpanRightStyled = styled.div`
 `;
 
 const TitleStyled = styled.div`
-  color: var(--colorLinkLight);
+  color: ${styleTools.color.colorLinkLight};
   font-size: 7vw;
   font-weight: bold;
 `;
 
 const TextLeftStyled = styled.div`
   margin-top: 1rem;
-  color: var(--colorLinkLight);
+  color: ${styleTools.color.colorLinkLight};
   font-size: large;
   text-align: left;
   width: 28vw;
@@ -54,7 +53,7 @@ const TextLeftStyled = styled.div`
 
 const TextRightStyled = styled.div`
   margin-top: 1rem;
-  color: var(--colorLinkLight);
+  color: ${styleTools.color.colorLinkLight};
   font-size: large;
   text-align: right;
   width: 24vw;
