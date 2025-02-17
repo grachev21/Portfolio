@@ -4,7 +4,7 @@ import Footer from "./global_components/Footer/Footer";
 
 function App() {
   return (
-    <main className="font-montserrat bg-colorBackground">
+    <main className="App">
       <Header />
       <Home />
       <Footer />

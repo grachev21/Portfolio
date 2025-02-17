@@ -1,7 +1,11 @@
+import s from "./styles.module.css";
+
 const TitleUp = ({ content }) => {
   return (
-    <main className="w-full flex justify-center mt-14 mb-8">
-      <div className="uppercase text-colorLinkDark font-medium">{content}</div>
+    <main className={s.ContainerTitle}>
+      <span className={s.LeftLine}></span>
+      <div className={s.Title}>{content}</div>
+      <span className={s.RightLine}></span>
     </main>
   );
 };

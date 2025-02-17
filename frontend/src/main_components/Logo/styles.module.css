@@ -1,0 +1,14 @@
+.Logo {
+  filter: invert();
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+@media (min-width: 830px) {
+  .Logo {
+    height: 4rem;
+    width: 4rem;
+  }
+}

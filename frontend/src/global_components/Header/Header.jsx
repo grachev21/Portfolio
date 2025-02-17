@@ -1,59 +1,91 @@
 import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaVk, FaTelegram, FaWhatsapp, FaGithub } from "react-icons/fa";
-import Logo from "../../main_components/Logo/Loco";
+import Logo from "../../main_components/Logo/Logo";
 import LinkLight from "../../main_components/Links/LinkLight";
-import Nav from "./Nav";
-import NavIcons from "./NavIcons";
+import styled from "styled-components";
+import styleTools from "../../stylesTool";
+
+import SidePanel from "./SidePanel";
+
+const ContainerStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--colorPanel);
+  height: 4rem;
+  transition: all, 1s;
+  @media (min-width: ${styleTools.size.md}) {
+    height: 6rem;
+    transition: all, 1s;
+  }
+`;
+const MenuStyled = styled.div`
+  height: 100%;
+  width: 100%;
+  margin-right: 1.25rem;
+  margin-left: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+`;
+const LuckStyled = styled.div`
+  cursor: pointer;
+  margin-right: 2rem;
+  @media (min-width: ${styleTools.size.md}) {
+    display: none;
+  }
+`;
+const NavStyled = styled.div`
+  display: none;
+  flex-direction: row;
+  @media (min-width: ${styleTools.size.md}) {
+    display: flex;
+  }
+`;
+const NavIconsStyled = styled.div`
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 10rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  @media (min-width: ${styleTools.size.md}) {
+    display: flex;
+  }
+`;
 
 const Header = () => {
   const menu = ["главная", "о нас", "наши работы", "фото", "контакты"];
-  const [isMenu, setMenu] = useState(false);
+  const [isMenu, setMenu] = useState(-24);
 
   const runMenu = () => {
-    isMenu ? setMenu(false) : setMenu(true);
+    isMenu === 4 ? setMenu(-22) : setMenu(4);
   };
-  console.log(isMenu);
 
   return (
-    <main className="flex justify-center bg-colorPanel">
-      {/* panel */}
-      <ul
-        className={`absolute flex flex-col items-center top-16 
-                    overflow-y-auto transition-transform transform
-                    ease-in-out duration-300 tablet:hidden
-                    ${isMenu ? "" : "-translate-y-full"} w-full h-1/2`}>
-        {menu.map((value, index) => {
-          return (
-            <li key={index} className="flex items-center justify-center bg-colorBackgroundButton border-b border-colorBorder w-full h-16">
-              <LinkLight link={value} />
-            </li>
-          );
-        })}
-        {/* icons */}
-        <li className="flex justify-center items-center w-full h-16 bg-colorBackgroundButton">
-          <FaGithub className="mx-4" size={28} color="#ffffff" />
-          <FaVk className="mx-4" size={28} color="#ffffff" />
-          <FaWhatsapp className="mx-4" size={28} color="#ffffff" />
-          <FaTelegram className="mx-4" size={28} color="#ffffff" />
-        </li>
-      </ul>
+    <ContainerStyled>
+      <SidePanel isMenu={isMenu} menu={menu} />
+      <Logo />
+      <MenuStyled>
+        <NavStyled>
+          {menu.map((value, index) => {
+            return <LinkLight key={index} link={value} />;
+          })}
+        </NavStyled>
+        <NavIconsStyled>
+          <FaGithub size={28} color="#ffffff" />
+          <FaVk size={28} color="#ffffff" />
+          <FaWhatsapp size={28} color="#ffffff" />
+          <FaTelegram size={28} color="#ffffff" />
+        </NavIconsStyled>
+      </MenuStyled>
 
-      {/* header */}
-      <section className="absolute flex justify-center w-full h-16 tablet:h-24 bg-colorPanel z-50">
-        <div className="h-full mx-5 w-full flex flex-row items-center laptop:w-[1040px] justify-between">
-          <Logo />
-          <Nav menu={menu} />
-          <NavIcons />
-          <AiOutlineMenu
-            onClick={runMenu}
-            className="transition-opacity duration-300 hover:opacity-75 cursor-pointer tablet:hidden"
-            size={27}
-            color="#ffffff"
-          />
-        </div>
-      </section>
-    </main>
+      <LuckStyled>
+        <AiOutlineMenu onClick={runMenu} size={27} color="#ffffff" />
+      </LuckStyled>
+    </ContainerStyled>
   );
 };
 export default Header;

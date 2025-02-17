@@ -1,0 +1,29 @@
+.ContainerTitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+.Title {
+  color: var(--colorLinkDark);
+  font-size: medium;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap; /* Предотвращает перенос текста */
+}
+.LeftLine {
+  width: 25vw;
+  height: 1px;
+  background-color: var(--colorLinkDark);
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.RightLine {
+  width: 25vw;
+  height: 1px;
+  background-color: var(--colorLinkDark);
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
