@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import styleTools from "../../stylesTool";
-
+import { GrLinkTop } from "react-icons/gr";
 import LinkDark from "../../main_components/Links/LinkDark";
 
 const ContainerStyled = styled.div`
@@ -11,7 +11,7 @@ const ContainerStyled = styled.div`
   height: 6rem;
   background-color: ${styleTools.color.colorBackgroundDark};
   z-index: 100;
-  box-shadow: 0px 5px 11px -2px rgba(34, 60, 80, 0.08) inset;
+  box-shadow: ${styleTools.shadow.shadowB} inset;
   @media (min-width: ${styleTools.size.md}) {
     justify-content: space-between;
   }
@@ -20,7 +20,7 @@ const RoundStyled = styled.div`
   position: absolute;
   z-index: 30;
   background-color: ${styleTools.color.colorBackgroundDark};
-  box-shadow: 0px 5px 11px -2px rgba(34, 60, 80, 0.11) inset;
+  box-shadow: ${styleTools.shadow.shadowB} inset;
   border-top-right-radius: 100px;
   border-top-left-radius: 100px;
   width: 8rem;
@@ -55,16 +55,28 @@ const BlockLinkStyled = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-
-
   }
 `;
 
+const TopIconStyled = styled.div`
+  position: absolute;
+  transform: translate(-50%);
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+`;
+
 const Footer = () => {
+  const runTop = () => {
+    window.scroll({ top: 0, behavior: "smooth" });
+  };
   return (
     <ContainerStyled>
       <RoundStyled>
         <BackRoundStyled />
+        <TopIconStyled onClick={runTop}>
+          <GrLinkTop color={styleTools.color.colorText} size={28} />
+        </TopIconStyled>
       </RoundStyled>
       <BlockStyled />
       <NameStyled>

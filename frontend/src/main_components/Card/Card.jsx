@@ -3,9 +3,10 @@ import styleTools from "../../stylesTool";
 
 const Container = styled.div`
   background-color: ${styleTools.color.colorBgCard};
-  box-shadow: ${styleTools.color.colorShadow};
+  box-shadow: ${styleTools.shadow.shadowA};
   border-radius: 15px;
   padding: 1.2rem;
+  max-width: 330px;
 `;
 const Img = styled.img`
   border-radius: 10px;
@@ -16,7 +17,7 @@ const Title = styled.div`
   color: ${styleTools.color.colorText};
 `;
 const Link = styled.div`
-  margin-top: 1rem;
+  margin-top: .6rem;
   color: ${styleTools.color.colorLinkDark};
 `;
 

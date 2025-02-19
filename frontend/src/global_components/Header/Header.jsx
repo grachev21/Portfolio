@@ -27,7 +27,6 @@ const HeaderStyled = styled.div`
 const MenuStyled = styled.div`
   height: 100%;
   width: 100%;
-  margin-right: 1.25rem;
   margin-left: 1.25rem;
   display: flex;
   flex-direction: row;
@@ -60,8 +59,15 @@ const NavIconsStyled = styled.div`
   }
 `;
 
+// const menu = {"главная": "/", "о нас", "наши работы", "фото", "контакты"};
+const menu = [
+  { name: "главная", link: "/" },
+  { name: "о нас", link: "about" },
+  { name: "мои работы", link: "portfolio" },
+  { name: "фотографии", link: "photo" },
+  { name: "контакты", link: "contact" },
+];
 const Header = () => {
-  const menu = ["главная", "о нас", "наши работы", "фото", "контакты"];
   const [isMenu, setMenu] = useState(-24);
 
   const runMenu = () => {
@@ -76,7 +82,7 @@ const Header = () => {
         <MenuStyled>
           <NavStyled>
             {menu.map((value, index) => {
-              return <LinkLight key={index} link={value} />;
+              return <LinkLight key={index} name={value.name} link={value.link} />;
             })}
           </NavStyled>
           <NavIconsStyled>

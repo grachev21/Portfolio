@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import styleTools from "../../stylesTool";
 
@@ -18,7 +19,11 @@ const ContainerStyld = styled.div`
   }
 `;
 
-const LinkLight = ({ link }) => {
-  return <ContainerStyld>{link}</ContainerStyld>;
+const LinkLight = ({ name, link }) => {
+  return (
+    <NavLink to={link}>
+      <ContainerStyld>{name}</ContainerStyld>
+    </NavLink>
+  );
 };
 export default LinkLight;

@@ -4,7 +4,7 @@ import styleTools from "../../stylesTool";
 const ContainerStyled = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-top: 4rem;
   margin-bottom: 2rem;
@@ -20,7 +20,7 @@ const LeftLineStyled = styled.div`
   width: 25vw;
   height: 1px;
   background-color: ${styleTools.color.colorLinkDark};
-  margin-left: 3rem;
+  margin-left: 2rem;
   margin-right: 3rem;
 `;
 const RightLineStyled = styled.div`
@@ -28,7 +28,7 @@ const RightLineStyled = styled.div`
   height: 1px;
   background-color: ${styleTools.color.colorLinkDark};
   margin-left: 3rem;
-  margin-right: 3rem;
+  margin-right: 2rem;
 `;
 const TitleUp = ({ content }) => {
   return (

@@ -40,7 +40,7 @@ const SidePanel = ({ isMenu, menu }) => {
       {menu.map((value, index) => {
         return (
           <ButtonStyled key={index}>
-            <LinkLight link={value} />
+            <LinkLight name={value.name} link={value.link} />
           </ButtonStyled>
         );
       })}
